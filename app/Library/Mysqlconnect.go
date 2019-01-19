@@ -32,10 +32,6 @@ func InstancetSlave(db string) *xorm.Engine {
 	switch db {
 		case "test":
 			c = database.MysqlTestDbConfig
-		case "xin_credit":
-			c = database.MysqlXinCreditSlave
-		case "xin":
-			c = database.MysqlXinSlave
 	}
 	engine, err := xorm.NewEngine(database.DriverName,
 		fmt.Sprintf("%s:%s@tcp(%s:%d)/%s?charset=utf8",
@@ -67,10 +63,6 @@ func InstancetMaster(db string) *xorm.Engine {
 	switch db {
 	case "test":
 		c = database.MysqlTestDbConfig
-	case "xin_credit":
-		c = database.MysqlXinCreditSlave
-	case "xin":
-		c = database.MysqlXinSlave
 	}
 	engine, err := xorm.NewEngine(database.DriverName,
 		fmt.Sprintf("%s:%s@tcp(%s:%d)/%s?charset=utf8",
