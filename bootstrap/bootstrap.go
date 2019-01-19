@@ -65,7 +65,7 @@ func (t *TemplateRenderer) Render(w io.Writer, name string, data interface{}, c 
 
 func (b *Bootstrapper) SetupViews() {
 	renderer := &TemplateRenderer{
-		templates: template.Must(template.ParseGlob("*.html")),
+		templates: template.Must(template.ParseGlob("resources/views/*.html")),
 	}
 	b.Renderer = renderer
 }
