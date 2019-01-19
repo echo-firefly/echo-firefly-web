@@ -3,6 +3,7 @@ package routes
 import (
 	"github.com/labstack/echo"
 	"net/http"
+	"project/echo-firefly-web/app/Controllers"
 	"project/echo-firefly-web/bootstrap"
 )
 
@@ -16,14 +17,8 @@ func Configure(b *bootstrap.Bootstrapper) {
 		return c.String(http.StatusOK, "这是测试主页面")
 	})
 	//加载到controller
-	g.GET("/test", func(c echo.Context) error {
-
-
-
-		return c.Render(http.StatusOK, "index.html", map[string]interface{}{
-			"name": "wood!",
-		})
-	}).Name = "test"
+	g.GET("/test", Controllers.TestGetData).Name = "test"
+	g.GET("/redis", Controllers.TestRedis)
 
 
 }

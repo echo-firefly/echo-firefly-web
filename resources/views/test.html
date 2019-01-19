@@ -1,0 +1,26 @@
+<html>
+<body>
+<h1>Hello {{.name}}</h1>
+
+<p>
+{{ with $x := index . "reverse" }}
+path: {{ call $x "test" }} -- 页面渲染测试模板
+{{ end }}
+</p>
+<hr />
+<table border="1">
+    <tr>
+        <th width="30">ID</th>
+        <th width="50">Username</th>
+        <th width="300">Address</th>
+    </tr>
+    {{range $k, $v := .list}}
+    <tr>
+        <td>{{$v.Id}}</td>
+        <td>{{$v.Username}}</td>
+        <td>{{$v.Address}}</td>
+    </tr>
+    {{end}}
+</table>
+</body>
+</html>
