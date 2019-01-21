@@ -11,10 +11,16 @@ type User struct {
 	Username       string `xorm:"not null comment('用户名称') VARCHAR(32)" form:"username"`
 	Address       string `xorm:"not null comment('用户名称') TEXT" form:"address"`
 }
+func (User) TableName() string {
+	return "user"
+}
 
-func (a *User)GetAll() ([]User,error){
+func (this *User)GetAll() ([]User,error){
 	query := Library.InstancetSlave("test")
 	datalist := make([]User, 0)
 	err := query.Find(&datalist)
-	return datalist,err
+	if err != nil {
+		return nil,err
+	}
+	return datalist,nil
 }

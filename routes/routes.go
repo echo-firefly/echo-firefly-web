@@ -9,6 +9,9 @@ import (
 
 func Configure(b *bootstrap.Bootstrapper) {
 
+	//定义全局控制器变量
+	var C Controllers.Base
+
 	b.GET("/", func(c echo.Context) error {
 		return c.String(http.StatusOK, "欢迎使用echo-firefly-web框架")
 	})
@@ -17,8 +20,9 @@ func Configure(b *bootstrap.Bootstrapper) {
 		return c.String(http.StatusOK, "这是测试主页面")
 	})
 	//加载到controller
-	g.GET("/test", Controllers.TestGetData).Name = "test"
-	g.GET("/redis", Controllers.TestRedis)
+	//g.GET("/test", Controllers.TestGetData).Name = "test"
+	g.GET("/test", C.Test.TestGetData).Name = "test"
+	g.GET("/redis", C.Test.TestRedis)
 
 
 }
