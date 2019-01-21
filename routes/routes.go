@@ -20,9 +20,9 @@ func Configure(b *bootstrap.Bootstrapper) {
 		return c.String(http.StatusOK, "这是测试主页面")
 	})
 	//加载到controller
-	//g.GET("/test", Controllers.TestGetData).Name = "test"
-	g.GET("/test", C.Test.TestGetData).Name = "test"
-	g.GET("/redis", C.Test.TestRedis)
+	g.GET("/test", C.Test.GetData).Name = "test"
+	g.GET("/api", C.Test.TestApi)
+	g.GET("/redis", C.Test.Redis)
 
 
 }

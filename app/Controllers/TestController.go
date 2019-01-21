@@ -9,8 +9,19 @@ import (
 	"time"
 )
 
+//api测试
+func(this *TestController) TestApi(c echo.Context) error  {
+	Response := Library.NewResponse(c)
+	testList,err:=this.Services.Test.GetUserList()
+	if(err != nil){
+		return Response.RetError(err, -1)
+	}
+
+	return Response.RetSuccess(testList)
+}
+
 //mysql操作
-func(this *TestController) TestGetData(c echo.Context) error {
+func(this *TestController) GetData(c echo.Context) error {
 	testList,err:=this.Services.Test.GetUserList()
 	if(err != nil){
 		fmt.Println(err)
@@ -22,7 +33,7 @@ func(this *TestController) TestGetData(c echo.Context) error {
 }
 
 //redis操作
-func(this *TestController) TestRedis(c echo.Context) error{
+func(this *TestController) Redis(c echo.Context) error{
 
 	redis_key := "echo_test"
 	redisO := Library.InitRedis()
