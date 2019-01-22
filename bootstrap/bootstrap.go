@@ -88,7 +88,7 @@ func (b *Bootstrapper) Bootstrap() *Bootstrapper {
 
 //开始监听 - 后续继续优化http配置
 func (b *Bootstrapper) Listen(addr string) {
-	log.Fatal(b.Start(":8001"))
+	log.Fatal(b.Start(addr))
 }
 
 
