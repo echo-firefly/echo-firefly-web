@@ -3,8 +3,8 @@ package routes
 import (
 	"github.com/labstack/echo"
 	"net/http"
-	"project/echo-firefly-web/app/Controllers"
-	"project/echo-firefly-web/bootstrap"
+	"echo-firefly-web/app/Controllers"
+	"echo-firefly-web/bootstrap"
 )
 
 func Configure(b *bootstrap.Bootstrapper) {

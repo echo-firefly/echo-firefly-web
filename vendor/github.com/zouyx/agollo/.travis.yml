@@ -1,0 +1,21 @@
+language: go
+sudo: required
+
+go:
+  - 1.9
+
+env:
+    - GO15VENDOREXPERIMENT="1"
+
+before_install:
+    - go get github.com/mattn/goveralls
+    - Project=apollo
+
+install:
+    - chmod u+x depend.sh
+    - ./depend.sh
+
+script:
+    - chmod u+x coverage.sh
+    - ./coverage.sh --coveralls
+    - go build -o "$Project"
