@@ -1,4 +1,4 @@
-module project/echo-firefly-web
+module echo-firefly-web
 
 go 1.12
 
