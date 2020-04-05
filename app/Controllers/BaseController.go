@@ -1,6 +1,6 @@
 package Controllers
 
-import "project/echo-firefly-web/app/Services"
+import "echo-firefly-web/app/Services"
 
 //定义控制器层
 type Base struct {

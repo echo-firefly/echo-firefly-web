@@ -1,7 +1,7 @@
 package Services
 
 import (
-	"project/echo-firefly-web/app/Models"
+	"echo-firefly-web/app/Models"
 )
 
 func (this *TestService)GetUserList() ([]Models.User, error) {

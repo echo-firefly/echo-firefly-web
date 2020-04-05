@@ -1,7 +1,7 @@
 package Models
 
 import (
-	"project/echo-firefly-web/app/Library"
+	"echo-firefly-web/app/Library"
 )
 
 

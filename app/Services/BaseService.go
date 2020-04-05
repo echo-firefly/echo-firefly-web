@@ -1,7 +1,7 @@
 package Services
 
 import (
-	"project/echo-firefly-web/app/Models"
+	"echo-firefly-web/app/Models"
 )
 
 //services层 主要是对业务层的一些逻辑封装

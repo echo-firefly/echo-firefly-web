@@ -5,7 +5,7 @@ import (
 	_ "github.com/go-sql-driver/mysql"
 	"github.com/go-xorm/xorm"
 	"log"
-	"project/echo-firefly-web/config/database"
+	"echo-firefly-web/config/database"
 	"sync"
 	"time"
 )

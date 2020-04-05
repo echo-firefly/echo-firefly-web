@@ -5,7 +5,7 @@ import (
 	"github.com/garyburd/redigo/redis"
 	"github.com/labstack/echo"
 	"net/http"
-	"project/echo-firefly-web/app/Library"
+	"echo-firefly-web/app/Library"
 	"time"
 )
 
